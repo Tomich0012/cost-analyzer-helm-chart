@@ -12,7 +12,7 @@ global:
   ## Ref: https://www.ibm.com/docs/en/kubecost/self-hosted/2.x?topic=configuration-prometheus-guide
   ##
   prometheus:
-    enabled: true
+    enabled: false
     fqdn: http://cost-analyzer-prometheus-server.default.svc  # Address of a Prometheus to connect to if enabled=false
     insecureSkipVerify: false  # If true, Kubecost will not check the TLS cert of prometheus
     # queryServiceBasicAuthSecretName: dbsecret  # kubectl create secret generic dbsecret -n kubecost --from-file=USERNAME --from-file=PASSWORD
@@ -22,7 +22,7 @@ global:
   ## Kubecost-bundled Grafana
   ##
   grafana:
-    enabled: true
+    enabled: false
     domainName: cost-analyzer-grafana.default.svc  # Address to Grafana. Ignored if enabled=true.
     scheme: "http"
     proxy: true  # If true, the Kubecost frontend will route to your grafana through its service endpoint
@@ -256,9 +256,9 @@ global:
   platforms:
     ## Deploying to OpenShift (OCP) requires enabling this option.
     openshift:
-      enabled: false  # Deploy Kubecost to OpenShift.
+      enabled: true  # Deploy Kubecost to OpenShift.
       route:
-        enabled: false  # Create an OpenShift Route.
+        enabled: true  # Create an OpenShift Route.
         annotations: {}  # Add annotations to the Route.
         # host: kubecost.apps.okd4.example.com  # Add a custom host for your Route.
 
@@ -805,7 +805,7 @@ prometheus:
   # nameOverride: ""
 
   rbac:
-    create: true  # Create the RBAC resources for Prometheus.
+    create: false  # Create the RBAC resources for Prometheus.
 
   serviceAccounts:
     alertmanager:
@@ -1501,13 +1501,13 @@ networkCosts:
     services:
       # google-cloud-services: when set to true, enables labeling traffic metrics with google cloud
       # service endpoints
-      google-cloud-services: true
+      google-cloud-services: false
       # amazon-web-services: when set to true, enables labeling traffic metrics with amazon web service
       # endpoints.
-      amazon-web-services: true
+      amazon-web-services: false
       # azure-cloud-services: when set to true, enables labeling traffic metrics with azure cloud service
       # endpoints
-      azure-cloud-services: true
+      azure-cloud-services: false
       # user defined services provide a way to define custom service endpoints which will label traffic metrics
       # falling within the defined address range.
       # services:
