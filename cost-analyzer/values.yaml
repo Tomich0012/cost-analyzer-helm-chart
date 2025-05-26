@@ -1501,13 +1501,13 @@ networkCosts:
     services:
       # google-cloud-services: when set to true, enables labeling traffic metrics with google cloud
       # service endpoints
-      google-cloud-services: true
+      google-cloud-services: false
       # amazon-web-services: when set to true, enables labeling traffic metrics with amazon web service
       # endpoints.
-      amazon-web-services: true
+      amazon-web-services: false
       # azure-cloud-services: when set to true, enables labeling traffic metrics with azure cloud service
       # endpoints
-      azure-cloud-services: true
+      azure-cloud-services: false
       # user defined services provide a way to define custom service endpoints which will label traffic metrics
       # falling within the defined address range.
       # services:
