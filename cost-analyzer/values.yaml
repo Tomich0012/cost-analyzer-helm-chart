@@ -256,9 +256,9 @@ global:
   platforms:
     ## Deploying to OpenShift (OCP) requires enabling this option.
     openshift:
-      enabled: false  # Deploy Kubecost to OpenShift.
+      enabled: true  # Deploy Kubecost to OpenShift.
       route:
-        enabled: false  # Create an OpenShift Route.
+        enabled: true  # Create an OpenShift Route.
         annotations: {}  # Add annotations to the Route.
         # host: kubecost.apps.okd4.example.com  # Add a custom host for your Route.
 
@@ -1501,13 +1501,13 @@ networkCosts:
     services:
       # google-cloud-services: when set to true, enables labeling traffic metrics with google cloud
       # service endpoints
-      google-cloud-services: true
+      google-cloud-services: false
       # amazon-web-services: when set to true, enables labeling traffic metrics with amazon web service
       # endpoints.
-      amazon-web-services: true
+      amazon-web-services: false
       # azure-cloud-services: when set to true, enables labeling traffic metrics with azure cloud service
       # endpoints
-      azure-cloud-services: true
+      azure-cloud-services: false
       # user defined services provide a way to define custom service endpoints which will label traffic metrics
       # falling within the defined address range.
       # services:
